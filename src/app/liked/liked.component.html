@@ -1,0 +1,14 @@
+<h2 style="text-align: center">Liked pokémons:</h2>
+<div *ngFor="let item of final_poke_list" id="liked-page">
+  <div class="poke-card">
+    <button type="button" class="like-button" (click)="deleteFromLiked(item[0])">
+      Dislike
+      <img src="assets/images/heart.png" class="like" alt="(heart)">
+    </button>
+    <a href="pokemon/{{item[0]}}">
+      <img src="{{item[1]}}" alt="(photo)" class="poke-img">
+      <h2>{{item[0]}}</h2>
+      <p class="detail-p">detail ⇩</p>
+    </a>
+  </div>
+</div>

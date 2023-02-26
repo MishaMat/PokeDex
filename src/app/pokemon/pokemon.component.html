@@ -1,0 +1,25 @@
+<div class="pokedex-page">
+  <mat-horizontal-stepper [labelPosition]="'bottom'" style="background-color: #fcfcbb">
+    <div *ngFor="let pokemonGroup of stepper_poke_list">
+      <mat-step>
+        <div *ngFor="let pokemon of pokemonGroup" class="pokedex-page">
+          <div class="poke-card">
+            <button type="button" (click)="addToLiked(pokemon[0])" class="like-button">
+              Like
+              <img src="assets/images/heart.png" id="like" alt="(heart)">
+            </button>
+            <a href="pokemon/{{pokemon[0]}}">
+              <img src="{{pokemon[1]}}" alt="(photo)" id="poke-img">
+              <h2>{{pokemon[0]}}</h2>
+              <p class="detail-p">detail ⇩</p>
+            </a>
+          </div>
+        </div>
+        <div id="buttons-nav">
+          <button class="button" mat-button matStepperPrevious>< Back</button>
+          <button class="button" mat-button matStepperNext>Next ></button>
+        </div>
+      </mat-step>
+    </div>
+  </mat-horizontal-stepper>
+</div>

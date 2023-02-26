@@ -1,0 +1,56 @@
+#liked-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poke-card {
+  border: 4px solid #2e2aa4;
+  color: #2e2aa4;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  background-color: #ec9494;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 300px;
+}
+
+.poke-card a {
+  color: #2e2aa4;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poke-img {
+  width: 165px;
+  height: auto;
+}
+
+.like {
+  height: 20px;
+  margin: 0 0 0 5px;
+}
+
+.like-button{
+  font-family: Papyrus;
+  display: none;
+  align-items: center;
+  background-color: #f8da49;
+}
+.poke-card:hover {
+  background-color: #ce7b7b;
+  border: 5px solid #2e2aa4;
+  margin: 4px;
+}
+.poke-card:hover button{
+  display: flex;
+}
+
+
+

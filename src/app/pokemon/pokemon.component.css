@@ -1,0 +1,75 @@
+.pokedex-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  border: 5px solid #2e2aa4;
+  background-color: #f8da49;
+  border-radius: 8px;
+  font-family: Papyrus, serif;
+  margin: 10px;
+  padding: 23px 20px 16px 20px;
+  font-size: 140%;
+}
+
+.poke-card {
+  border: 4px solid #2e2aa4;
+  color: #2e2aa4;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  background-color: #ec9494;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 290px;
+}
+
+.poke-card a {
+  color: #2e2aa4;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#poke-img {
+  width: 165px;
+  height: auto;
+}
+
+#like {
+  height: 20px;
+  margin: 0 0 0 5px;
+}
+
+.poke-card:hover{
+  background-color: #ce7b7b;
+  border: 5px solid #2e2aa4;
+  margin: 4px;
+}
+.poke-card:hover button{
+  display: flex;
+}
+
+.detail-p {
+  font-size: 80%;
+  margin: 0;
+}
+
+#buttons-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.like-button {
+  display: none;
+  font-family: Papyrus, serif;
+  align-items: center;
+  background-color: #f8da49;
+  border-radius: 3px;
+}
+

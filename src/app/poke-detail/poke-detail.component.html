@@ -1,0 +1,64 @@
+<div id="poke-detail-info" *ngIf="photo_front">
+  <div>
+    <a href="{{photo_front}}"><img src="{{photo_front}}" alt="(photo)" height="150px"></a>
+    <a href="{{photo_back}}"><img src="{{photo_back}}" alt="(photo)" height="150px"></a>
+  </div>
+  <h1>{{poke_name}}</h1>
+  <p>Type: {{type_1}}</p>
+  <p *ngIf="type_2"> Secondary type: {{type_2}}</p>
+  <p>Weight: {{weight}} lbs</p>
+  <p>Height: {{height}} inch</p>
+  <h2>Stats</h2>
+  <table>
+    <tr>
+      <td>
+        <img src="assets/images/heart.png" alt="(photo)" height="15px">
+      </td>
+      <td>
+        <p>HP: {{hp}}</p>
+      </td>
+      <td>
+        <img src="assets/images/speed.png" alt="(photo)" height="30px">
+      </td>
+      <td>
+        <p>Speed: {{speed}}</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <img src="assets/images/sword.png" alt="(photo)" height="15px">
+      </td>
+      <td>
+        <p>Attack: {{attack}}</p>
+      </td>
+      <td>
+        <img src="assets/images/sword_2.png" alt="(photo)" height="15px">
+      </td>
+      <td>
+        <p>Special: {{special_attack}}</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <img src="assets/images/shield.png" alt="(photo)" height="15px">
+      </td>
+      <td>
+        <p>Defense: {{attack}}</p>
+      </td>
+      <td>
+        <img src="assets/images/shield_2.png" alt="(photo)" height="15px">
+      </td>
+      <td>
+        <p>Special: {{special_defense}}</p>
+      </td>
+    </tr>
+  </table>
+</div>
+<div *ngIf="!photo_front">
+<p style="text-align: center">No pokemon with this name!</p>
+</div>
+
+
+
