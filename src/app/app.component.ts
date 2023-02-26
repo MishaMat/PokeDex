@@ -15,7 +15,7 @@ export class AppComponent {
     // @ts-ignore
     let data = document.getElementById('search-input').value;
     if (data){
-      this.pokemon = data;
+      this.pokemon = data.toLowerCase();
       console.log(this.pokemon)
     }
   }

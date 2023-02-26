@@ -1,4 +1,4 @@
-#liked-page{
+#liked-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,18 +37,21 @@
   margin: 0 0 0 5px;
 }
 
-.like-button{
-  font-family: Papyrus;
+.like-button {
+  font-family: Papyrus, serif;
   display: none;
   align-items: center;
   background-color: #f8da49;
+  border-radius: 3px;
 }
+
 .poke-card:hover {
   background-color: #ce7b7b;
   border: 5px solid #2e2aa4;
   margin: 4px;
 }
-.poke-card:hover button{
+
+.poke-card:hover button {
   display: flex;
 }
 
