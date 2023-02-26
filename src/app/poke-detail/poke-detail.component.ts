@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import axios from "axios";
+import {fromPromise} from "rxjs/internal/observable/innerFrom";
+import {catchError} from "rxjs";
 
 @Component({
   selector: 'app-poke-detail',
@@ -27,10 +29,10 @@ export class PokeDetailComponent {
   speed = 0;
 
   ngOnInit() {
-    // 'bank' is the name of the route parameter
     this.poke_name = this.route.snapshot.params['name'];
 
-    axios.get('https://pokeapi.co/api/v2/pokemon/' + this.poke_name).then(resp => {
+    fromPromise(axios.get('https://pokeapi.co/api/v2/pokemon/' + this.poke_name)
+      .then(resp => {
       this.type_1 = resp.data.types[0].type.name;
       if (resp.data.types.length == 2) {
         this.type_2 = resp.data.types[1].type.name;
@@ -45,7 +47,13 @@ export class PokeDetailComponent {
       this.special_attack = resp.data.stats[3].base_stat;
       this.special_defense = resp.data.stats[4].base_stat;
       this.speed = resp.data.stats[5].base_stat;
-    })
+    })).subscribe(
+      {
+        error: (error) => {
+          console.log('Error: wrong pokemon name.')
+        }
+      }
+    )
   }
 
 }

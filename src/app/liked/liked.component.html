@@ -1,7 +1,7 @@
 <div *ngIf="final_poke_list">
   <h2 style="text-align: center">Liked pokémons({{final_poke_list.length}}):</h2>
   <div *ngFor="let item of final_poke_list" id="liked-page">
-    <div class="poke-card">
+    <div class="poke-card" id="card">
       <button type="button" class="like-button" (click)="deleteFromLiked(item[0])">
         Dislike
         <img src="assets/images/heart.png" class="like" alt="(heart)">

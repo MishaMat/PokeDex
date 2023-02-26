@@ -3,7 +3,7 @@
     <div *ngFor="let pokemonGroup of stepper_poke_list">
       <mat-step>
         <div *ngFor="let pokemon of pokemonGroup" class="pokedex-page">
-          <div class="poke-card">
+          <div class="poke-card" id="card">
             <button type="button" (click)="addToLiked(pokemon[0])" class="like-button">
               Like
               <img src="assets/images/heart.png" id="like" alt="(heart)">
