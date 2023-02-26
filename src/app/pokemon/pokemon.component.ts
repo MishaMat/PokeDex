@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-
+import {MatDialog} from "@angular/material/dialog";
 import axios from "axios";
+import {DialogExComponent} from "../dialog-ex/dialog-ex.component";
 
 @Component({
   selector: 'app-pokemon',
@@ -11,7 +12,7 @@ export class PokemonComponent implements OnInit {
   stepper_poke_list = [];
   poke_list = [];
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
 
     // @ts-ignore
     this.poke_list.push([]);
@@ -41,28 +42,31 @@ export class PokemonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   addToLiked(name: string) {
-    if (confirm('Like ' + name + ' ?')) {
-      let d = localStorage.getItem('pokemon');
-      if (d) {
-        let poke_list = JSON.parse(d);
-        let data = {name: name}
-        let flag = true;
-        for (let poke of poke_list) {
-          if (poke.name == data.name) {
-            flag = false
+    let dialogRef = this.dialog.open(DialogExComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        let d = localStorage.getItem('pokemon');
+        if (d) {
+          let poke_list = JSON.parse(d);
+          let data = {name: name}
+          let flag = true;
+          for (let poke of poke_list) {
+            if (poke.name == data.name) {
+              flag = false
+            }
           }
+          if (flag) {
+            poke_list.push(data)
+          }
+          localStorage.setItem('pokemon', JSON.stringify(poke_list))
         }
-        if (flag) {
-          poke_list.push(data)
-        }
-        localStorage.setItem('pokemon', JSON.stringify(poke_list))
       } else {
         let data = [{name: name}]
         localStorage.setItem('pokemon', JSON.stringify(data))
       }
-    }
+    })
   }
 }
 

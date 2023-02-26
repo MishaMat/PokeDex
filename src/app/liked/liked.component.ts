@@ -31,20 +31,18 @@ export class LikedComponent {
     });
   }
 
-  deleteFromLiked(name:string) {
-    if (confirm('Dislike ' + name + ' ?')) {
-      let d = localStorage.getItem('pokemon');
-      if (d) {
-        let final_list = []
-        let poke_list = JSON.parse(d);
-        for (let i of poke_list) {
-          if (i.name != name) {
-            final_list.push(i)
-          }
+  deleteFromLiked(name: string) {
+    let d = localStorage.getItem('pokemon');
+    if (d) {
+      let final_list = []
+      let poke_list = JSON.parse(d);
+      for (let i of poke_list) {
+        if (i.name != name) {
+          final_list.push(i)
         }
-        localStorage.setItem('pokemon', JSON.stringify(final_list));
       }
-      window.location.reload();
+      localStorage.setItem('pokemon', JSON.stringify(final_list));
     }
+    window.location.reload();
   }
 }
