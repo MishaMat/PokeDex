@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import axios from "axios";
-import {fromPromise} from "rxjs/internal/observable/innerFrom";
 
 @Component({
   selector: 'app-poke-detail',
@@ -31,11 +30,6 @@ export class PokeDetailComponent {
     // 'bank' is the name of the route parameter
     this.poke_name = this.route.snapshot.params['name'];
 
-    // fromPromise(axios.get('https://pokeapi.co/api/v2/pokemon/' + this.poke_name))
-    //   .pipe(
-    //
-    //   )
-    //   .subscribe()
     axios.get('https://pokeapi.co/api/v2/pokemon/' + this.poke_name).then(resp => {
       this.type_1 = resp.data.types[0].type.name;
       if (resp.data.types.length == 2) {

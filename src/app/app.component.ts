@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import axios from "axios";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +15,6 @@ export class AppComponent {
     let data = document.getElementById('search-input').value;
     if (data){
       this.pokemon = data.toLowerCase();
-      console.log(this.pokemon)
     }
   }
 }
