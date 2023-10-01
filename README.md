@@ -1,5 +1,8 @@
 # PokeDex
 
+This was my job offer exam for 'Junior Angular Dev' position.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 
 ## Development server
